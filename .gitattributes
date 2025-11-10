@@ -1,3 +1,4 @@
+*.pth filter=lfs diff=lfs merge=lfs -text
 models/vgg16_retrained.pth filter=lfs diff=lfs merge=lfs -text
 models/vgg19_retrained.pth filter=lfs diff=lfs merge=lfs -text
 models/resnet50_retrained.pth filter=lfs diff=lfs merge=lfs -text
