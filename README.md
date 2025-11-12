@@ -104,7 +104,7 @@ Analyzing in more detail, **ResNet50** is also the **most well-rounded model** (
 - Connected to the previous, all models confused swallows and martins between themselves the most, which led to worse results in their class accuracy. This is expected, as they are quite similar morphologically.
 - Some missclassifications were due to low-quality images due to imperfect cleaning. This could be corrected by refining the cleaning process, as CLIP did not yield perfect results.
 
-## 🚀 Future work
+### 🚀 Future work
 - Refine the automated cleaning process. One option would be using an instructed **AI agent-based** pipeline as an image cleaner.
 - **Enhance the dataset** to include more migratory species and improve the taxonomic coverage
 - Explore more lightweight architectures similar to ResNet50 for **real-time inference**.
