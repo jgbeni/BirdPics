@@ -13,13 +13,16 @@ This personal project aims to help the **automatization** of migratory bird spec
 6. [Authors](#authors)
 7. [License & Credits](#license-credits)
 
-<a name="motivation"/>
+
 ## 💡 Motivation
+
+<a name="motivation"/>
 
 Due to human activities and climate change, some migratory bird populations are suffering a significant decline, such as the [Common Swift](https://www.birdguides.com/articles/conservation/study-examines-factors-driving-long-term-common-swift-decline/) (*Apus apus*). In this context, fast and reliable species census are key for conservation, but traditional methods are slow and expensive. However, with the popularization of webpages such as [iNaturalist](https://www.inaturalist.org/) or [eBird](https://ebird.org/home), the number of accessible observations made by amateur *birders* has grown exponentially. Through Big Data and Machine Learning, we can train models to reliably indentify the species of this observations, cheapening the species census to help scientist with their conservation efforts.
 
-<a name="project-overview"/>
 ## 🧭 Project Overview
+
+<a name="project-overview"/>
 
 This project aims to classify three morphologically similar bird genera commonly found across Europe. In this first version, the considered species are:
 **Common Swallows (Hirunda rustica), Common Swifts (Apus apus), and Common House Martins (Delichon urbicum).**
@@ -34,8 +37,8 @@ This project explores how **deep learning models**, fine-tuned via **transfer le
 - 🧠 Transfer learning using large image-recognition models: **VGG16**, **VGG19** and **ResNet50**.  
 - 📈 Achieved **92% accuracy** on unseen images.
 
-<a name="workflow"/>
 ## ⚙️ Workflow
+<a name="workflow"/>
 
 ### 1️⃣ Data Collection
 All observations across Europe of swallows (*Hirunda rustica*), swifts (*Apus apus*), and martins (*Delichon urbicum*) were retrieved from [iNaturalist](https://www.inaturalist.org). From the observations, we retrieved the species guess, image url, number of observation agreements and number of observation disagreements (made by iNaturalist users). The last two features were useful for the data cleaning process.
@@ -65,8 +68,8 @@ This was the most elaborate step:
 - The **ResNet50** model achieved the best performance with  
   **Test Accuracy: 92%**
 
-<a name="repository-structure"/>
 ## 📁 Repository Structure
+<a name="repository-structure"/>
 
 ```bash
 bird-classification/
@@ -85,8 +88,8 @@ bird-classification/
 ⚠️ Due to dataset size (>3GB), the full image dataset is hosted on [Kaggle](https://www.kaggle.com/datasets/jgbeniqu/birdpics-spanish-migratory-bird-image-dataset?select=README.txt).
 Please run `N1_download_dataset.ipynb` to download it (or download it manually) before running the other scripts. To download the dataset to Google Drive, run the `colab_notebooks/download_gdrive.ipynb` in Google Colab.
 
-<a name="results"/>
 ## 📊 Results
+<a name="results"/>
 
 | Model    | Validation Accuracy | Test Accuracy |
 | -------- | ------------------- | ------------- |
@@ -94,13 +97,15 @@ Please run `N1_download_dataset.ipynb` to download it (or download it manually) 
 | VGG19    | 90%                 | 89%           |
 | ResNet50 | **91%**             | **92%**       |
 
-<a name="authors"/>
+
 ## 👷 Authors
+<a name="authors"/>
 
 - [@jgbeni](https://www.github.com/jgbeni)
 
-<a name="license-credits"/>
 ## 📜 License & Credits
+<a name="license-credits"/>
+
 Code License
 
 This repository is released under the [MIT](https://choosealicense.com/licenses/mit/) License.
