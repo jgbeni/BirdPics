@@ -23,7 +23,7 @@ Due to human activities and climate change, some migratory bird populations are 
 ## 🧭 Project Overview
 
 <a name="project-overview"/>
-
+</ins>
 This project aims to classify three morphologically similar bird genera commonly found across Europe. In this first version, the considered species are:
 **Common Swallows (Hirunda rustica), Common Swifts (Apus apus), and Common House Martins (Delichon urbicum).**
 
