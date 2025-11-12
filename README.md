@@ -1,7 +1,9 @@
 
-# BirdPics: Computer Vision for migratory bird species recognition
+# 🐦 BirdPics: Computer Vision for migratory bird species recognition
 
-This personal project aims to help the **automatization** of migratory bird species image recognition using **Deep Learning**.
+![Dataser Cover](other_files/dataset-cover.png)
+
+This personal project aims to help the **automatization** of migratory bird species identification through image recognition using **Deep Learning**.
 
 
 ## 📋 Table of Contents
@@ -16,18 +18,18 @@ This personal project aims to help the **automatization** of migratory bird spec
 
 ## 💡 Motivation
 
-Due to human activities and climate change, some migratory bird populations are suffering a significant decline, such as the [Common Swift](https://www.birdguides.com/articles/conservation/study-examines-factors-driving-long-term-common-swift-decline/) (*Apus apus*). In this context, fast and reliable species censuses are key for conservation, but traditional methods are slow and expensive. However, with the popularity of websites such as [iNaturalist](https://www.inaturalist.org/) and [eBird](https://ebird.org/home), the number of accessible observations made by amateur *birders* has grown exponentially. Using Big Data and Machine Learning, we can train models to reliably identify the species in these observations, reducing the cost of species censuses and helping scientists with their conservation efforts.
+Due to human activities and climate change, some migratory bird populations are suffering a significant decline, such as the [common swift](https://www.birdguides.com/articles/conservation/study-examines-factors-driving-long-term-common-swift-decline/). In this context, fast and reliable species censuses are key for conservation, but traditional methods are slow and expensive. However, with the popularity of websites such as [iNaturalist](https://www.inaturalist.org/) and [eBird](https://ebird.org/home), the number of accessible observations made by amateur *birders* has grown exponentially. Using Big Data and Machine Learning, we can train models to reliably identify the species in these observations, reducing the cost of species censuses and helping scientists with their conservation efforts.
 
 ## 🧭 Project Overview
 
 This project aims to classify three morphologically similar bird genera commonly found across Europe. In this first version, the considered species are:
-Common Swallows (*Hirunda rustica*), Common Swifts (*Apus apus*), and Common House Martins (*Delichon urbicum*).
+**Common Swallows** (*Hirunda rustica*), **Common Swifts** (*Apus apus*), and **Common House Martins** (*Delichon urbicum*).
 Accurately identifying these species in photographs is challenging due to their overlapping morphology and flight patterns.  
 This project explores how deep learning models, fine-tuned via transfer learning, can effectively distinguish between them using carefully cleaned and standardized image data.
 
 ### Key Features
 - ✅ Custom **Agreement Score** metric to select high-quality observations.  
-- 🧹 Automated data cleaning using **CLIP (OpenAI).**  
+- 🧹 Automated data cleaning using **CLIP (OpenAI)**.  
 - ⚙️ Efficient data loading and storage with **HDF5** 
 - 🧠 Transfer learning using large image-recognition models: **VGG16**, **VGG19** and **ResNet50**.  
 - 📈 Achieved **92% accuracy** on unseen images.
@@ -35,7 +37,7 @@ This project explores how deep learning models, fine-tuned via transfer learning
 ## ⚙️ Workflow
 
 ### 1️⃣ Data Collection
-All observations across Europe of swallows (*Hirunda rustica*), swifts (*Apus apus*), and martins (*Delichon urbicum*) were retrieved from [iNaturalist](https://www.inaturalist.org). From the observations, we retrieved the species guess, image URL, number of observation agreements, and number of observation disagreements (made by iNaturalist users). The last two features were useful for the data cleaning process.
+All observations across Europe of swallows (*Hirunda rustica*), swifts (*Apus apus*), and martins (*Delichon urbicum*) were retrieved from [iNaturalist](https://www.inaturalist.org). From each observation, we retrieved the species guess, image URL, number of observation agreements, and number of observation disagreements (made by iNaturalist users). The last two features were useful for the data cleaning process.
 
 ### 2️⃣ Data Cleaning
 This was the most elaborate step:
