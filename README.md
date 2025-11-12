@@ -8,12 +8,12 @@ This personal project aims to help the **automatization** of migratory bird spec
 
 ## 📋 Table of Contents
 1. [Motivation](https://github.com/jgbeni/BirdPics/blob/main/#-motivation)
-2. [Project Overview](https://github.com/jgbeni/BirdPics/blob/main/README.md#-project-overview)
-3. [Workflow](https://github.com/jgbeni/BirdPics/blob/main/README.md#%EF%B8%8F-workflow)
-4. [Repository Structure](https://github.com/jgbeni/BirdPics/blob/main/README.md#-repository-structure)
-5. [Results](https://github.com/jgbeni/BirdPics/blob/main/README.md#-results)
-6. [Authors](https://github.com/jgbeni/BirdPics/blob/main/README.md#-authors)
-7. [License & Credits](https://github.com/jgbeni/BirdPics/blob/main/README.md#-license--credits)
+2. [Project Overview](https://github.com/jgbeni/BirdPics/blob/main/#-project-overview)
+3. [Workflow](https://github.com/jgbeni/BirdPics/blob/main/#%EF%B8%8F-workflow)
+4. [Repository Structure](https://github.com/jgbeni/BirdPics/blob/main/#-repository-structure)
+5. [Results](https://github.com/jgbeni/BirdPics/blob/main/#-results)
+6. [Authors](https://github.com/jgbeni/BirdPics/blob/main/#-authors)
+7. [License & Credits](https://github.com/jgbeni/BirdPics/blob/main/#-license--credits)
 
 
 ## 💡 Motivation
