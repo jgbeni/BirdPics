@@ -6,7 +6,7 @@ This personal project aims to help the **automatization** of migratory bird spec
 
 ## 📋 Table of Contents
 1. [Motivation](#motivation)
-2. [Project Overview](#overview)
+2. [Project Overview](#🧭-project-overview)
 3. [Workflow](#workflow)
 4. [Repository Structure](#repository-structure)
 5. [Results](#results)
@@ -21,8 +21,6 @@ This personal project aims to help the **automatization** of migratory bird spec
 Due to human activities and climate change, some migratory bird populations are suffering a significant decline, such as the [Common Swift](https://www.birdguides.com/articles/conservation/study-examines-factors-driving-long-term-common-swift-decline/) (*Apus apus*). In this context, fast and reliable species censuses are key for conservation, but traditional methods are slow and expensive. However, with the popularity of websites such as [iNaturalist](https://www.inaturalist.org/) and [eBird](https://ebird.org/home), the number of accessible observations made by amateur *birders* has grown exponentially. Using Big Data and Machine Learning, we can train models to reliably identify the species in these observations, reducing the cost of species censuses and helping scientists with their conservation efforts.
 
 ## 🧭 Project Overview
-
-<a name="overview">
 
 This project aims to classify three morphologically similar bird genera commonly found across Europe. In this first version, the considered species are:
 Common Swallows (*Hirunda rustica*), Common Swifts (*Apus apus*), and Common House Martins (*Delichon urbicum*).
