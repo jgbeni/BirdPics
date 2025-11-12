@@ -1,9 +1,10 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import torch
-from torch.utils.data import  DataLoader
 import torchvision.models as models
 import torch.nn as nn
 import utils.data_preprocessing as dp
+from sklearn.metrics import confusion_matrix
 from tqdm import tqdm
 
 class load_model:
@@ -41,16 +42,13 @@ class load_model:
             return model
         self.get_model = get_model
 
-def create_dataloader(X, Y, batch_size=64, shuffle=False, num_workers=2, train=False):
-    Y_enc = dp.prepare_labels(Y)
-    dataset = dp.HDF5Dataset(X, Y_enc, train=train)
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
-    return dataloader
+# Create dataloader for evaluation
 
+# Evaluate the model on test data
 def eval_model(model, X_test, Y_test):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    testloader = create_dataloader(X_test, Y_test)
+    testloader = dp.create_dataloader(X_test, Y_test)
 
     model.to(device)
 
@@ -84,4 +82,111 @@ def eval_model(model, X_test, Y_test):
         print(f'Accuracy of {classes[i]}: {class_acc[i]} %')
     return accuracy, class_acc, np.array(label_vec, int), np.array(pred_vec, int)
 
+# Class to load and plot loss and accuracy curves
+class loss_acc_loader:
+    def __init__(self, model_name,model_dir ='models/'):
+        self.model_name = model_name
+        self.model_dir = model_dir
+        self.model_path = self.model_dir + self.model_name + '_retrained.npz'
+        self.data = np.load(self.model_path)
+        self.train_loss = self.data['train_loss']
+        self.val_loss = self.data['val_loss']
+        self.train_acc = self.data['train_acc']
+        self.val_acc = self.data['val_acc']
+        self.epochs = len(self.train_loss)
+        self.epoch_range = range(1, self.epochs + 1)
 
+    # Plot loss curves
+    def plot_loss(self):
+        plt.rcParams['font.family'] = 'sans-serif'
+        plt.figure(figsize=(7, 4))
+        plt.plot(self.epoch_range, self.train_loss, label='Train Loss')
+        plt.plot(self.epoch_range, self.val_loss, label='Validation Loss')
+        plt.title(f'Loss Curves for {self.model_name}', fontsize=18)
+        plt.xlabel('Epochs', fontsize=14)
+        plt.xticks(self.epoch_range)
+        plt.ylabel('Loss', fontsize=14)
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+
+    # Accuracy plot
+    def plot_accuracy(self):
+        plt.rcParams['font.family'] = 'sans-serif'
+        plt.figure(figsize=(7, 4))
+        plt.plot(self.epoch_range, self.train_acc, label='Train Accuracy')
+        plt.plot(self.epoch_range, self.val_acc, label='Validation Accuracy')
+        plt.title(f'Accuracy Curves for {self.model_name}', fontsize=18)
+        plt.xlabel('Epochs', fontsize=14)
+        plt.xticks(self.epoch_range)
+        plt.ylabel('Accuracy', fontsize=14)
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+    
+    # Combined plot for loss and accuracy
+    def plot_loss_acc(self):
+        plt.rcParams['font.family'] = 'sans-serif'
+        fig, axes = plt.subplots(2, 1, figsize=(6, 6))
+
+        # Loss plot
+        ax1 = axes[0]
+        ax1.set_xlabel('Epochs', fontsize=14)
+        ax1.set_ylabel('Loss', fontsize=14)
+        ax1.plot(self.epoch_range, self.train_loss, label='Train Loss', color='blue', linestyle='-')
+        ax1.plot(self.epoch_range, self.val_loss, label='Validation Loss', color='blue', linestyle='--')
+        ax1.legend()
+        ax1.set_xticks(self.epoch_range)
+
+        # Accuracy plot
+        ax2 = axes[1]
+        ax2.set_xlabel('Epochs', fontsize=14)
+        ax2.set_ylabel('Accuracy', fontsize=14)
+        ax2.plot(self.epoch_range, self.train_acc, label='Train Accuracy', color='orange', linestyle='-')
+        ax2.plot(self.epoch_range, self.val_acc, label='Validation Accuracy', color='orange', linestyle='--')
+        ax2.legend()
+        ax2.set_xticks(self.epoch_range)
+        ax2.set_ylim(40, 100)
+        
+
+        fig.suptitle(f'Loss and Accuracy Curves for {self.model_name}', fontsize=18)
+        plt.tight_layout()
+        plt.show()
+        
+def plot_confusion_matrix(labels,predictions,classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    This function computes and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    
+    cm = confusion_matrix(labels, predictions)
+    
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i in range(cm.shape[0]):
+        for j in range(cm.shape[1]):
+            plt.text(j, i, format(cm[i, j], fmt),
+                     horizontalalignment="center",
+                     color="white" if cm[i, j] > thresh else "black")
+
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    plt.tight_layout()

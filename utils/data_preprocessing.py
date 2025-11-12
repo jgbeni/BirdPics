@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset,DataLoader
 from torchvision import transforms as T
 import torchvision.transforms.v2 as T2
 
@@ -40,6 +40,12 @@ class HDF5Dataset(Dataset):
             self.normalize(image)
 
         return image, label
+
+def create_dataloader(X, Y, batch_size=64, shuffle=False, num_workers=2, train=False):
+    Y_enc = prepare_labels(Y)
+    dataset = HDF5Dataset(X, Y_enc, train=train)
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers)
+    return dataloader
     
 
 ###### Label preprocessing ######
