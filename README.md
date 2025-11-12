@@ -69,7 +69,7 @@ This was the most elaborate step:
 <a name="repository-structure"/>
 
 ```bash
-bird-classification/
+BirdPics/
 │
 ├── N1_download_dataset.ipynb     # Notebook to download and understand the dataset
 ├── N2_image_preprocessing.ipynb  # Notebook to understand the data augmentation protocol
