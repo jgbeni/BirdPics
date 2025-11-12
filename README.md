@@ -22,6 +22,8 @@ Due to human activities and climate change, some migratory bird populations are 
 
 ## 🧭 Project Overview
 
+<a name="overview">
+
 This project aims to classify three morphologically similar bird genera commonly found across Europe. In this first version, the considered species are:
 Common Swallows (*Hirunda rustica*), Common Swifts (*Apus apus*), and Common House Martins (*Delichon urbicum*).
 Accurately identifying these species in photographs is challenging due to their overlapping morphology and flight patterns.  
@@ -35,7 +37,7 @@ This project explores how deep learning models, fine-tuned via transfer learning
 - 📈 Achieved **92% accuracy** on unseen images.
 
 ## ⚙️ Workflow
-<a name="workflow"/>
+<a name="workflow">
 
 ### 1️⃣ Data Collection
 All observations across Europe of swallows (*Hirunda rustica*), swifts (*Apus apus*), and martins (*Delichon urbicum*) were retrieved from [iNaturalist](https://www.inaturalist.org). From the observations, we retrieved the species guess, image URL, number of observation agreements, and number of observation disagreements (made by iNaturalist users). The last two features were useful for the data cleaning process.
@@ -66,7 +68,7 @@ This was the most elaborate step:
   **Test Accuracy: 92%**
 
 ## 📁 Repository Structure
-<a name="repository-structure"/>
+<a name="repository-structure">
 
 ```bash
 BirdPics/
@@ -86,7 +88,7 @@ BirdPics/
 Please run `N1_download_dataset.ipynb` to download it (or download it manually) before running the other scripts. To download the dataset to Google Drive, run the `colab_notebooks/download_gdrive.ipynb` in Google Colab.
 
 ## 📊 Results
-<a name="results"/>
+<a name="results">
 
 | Model    | Validation Accuracy | Test Accuracy |
 | -------- | ------------------- | ------------- |
@@ -96,12 +98,12 @@ Please run `N1_download_dataset.ipynb` to download it (or download it manually) 
 
 
 ## 👷 Authors
-<a name="authors"/>
+<a name="authors">
 
 - [@jgbeni](https://www.github.com/jgbeni)
 
 ## 📜 License & Credits
-<a name="license-credits"/>
+<a name="license-credits">
 
 Code License
 
