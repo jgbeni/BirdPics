@@ -7,7 +7,7 @@ This personal project aims to help the **automatization** of migratory bird spec
 
 
 ## 📋 Table of Contents
-1. [Motivation](https://github.com/jgbeni/BirdPics/blob/main/README.md#-motivation)
+1. [Motivation](https://github.com/jgbeni/BirdPics/blob/main/#-motivation)
 2. [Project Overview](https://github.com/jgbeni/BirdPics/blob/main/README.md#-project-overview)
 3. [Workflow](https://github.com/jgbeni/BirdPics/blob/main/README.md#%EF%B8%8F-workflow)
 4. [Repository Structure](https://github.com/jgbeni/BirdPics/blob/main/README.md#-repository-structure)
