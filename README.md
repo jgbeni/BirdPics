@@ -5,17 +5,16 @@ This personal project aims to help the **automatization** of migratory bird spec
 
 
 ## 📋 Table of Contents
-1. [Motivation](#motivation)
+1. [Motivation](https://github.com/jgbeni/BirdPics/blob/main/README.md#-motivation)
 2. [Project Overview](https://github.com/jgbeni/BirdPics/blob/main/README.md#-project-overview)
-3. [Workflow](#workflow)
-4. [Repository Structure](#repository-structure)
-5. [Results](#results)
-6. [Authors](#authors)
-7. [License & Credits](#license-credits)
+3. [Workflow](https://github.com/jgbeni/BirdPics/blob/main/README.md#%EF%B8%8F-workflow)
+4. [Repository Structure](https://github.com/jgbeni/BirdPics/blob/main/README.md#-repository-structure)
+5. [Results](https://github.com/jgbeni/BirdPics/blob/main/README.md#-results)
+6. [Authors](https://github.com/jgbeni/BirdPics/blob/main/README.md#-authors)
+7. [License & Credits](https://github.com/jgbeni/BirdPics/blob/main/README.md#-license--credits)
 
 
 ## 💡 Motivation
-
 
 Due to human activities and climate change, some migratory bird populations are suffering a significant decline, such as the [Common Swift](https://www.birdguides.com/articles/conservation/study-examines-factors-driving-long-term-common-swift-decline/) (*Apus apus*). In this context, fast and reliable species censuses are key for conservation, but traditional methods are slow and expensive. However, with the popularity of websites such as [iNaturalist](https://www.inaturalist.org/) and [eBird](https://ebird.org/home), the number of accessible observations made by amateur *birders* has grown exponentially. Using Big Data and Machine Learning, we can train models to reliably identify the species in these observations, reducing the cost of species censuses and helping scientists with their conservation efforts.
 
@@ -34,7 +33,6 @@ This project explores how deep learning models, fine-tuned via transfer learning
 - 📈 Achieved **92% accuracy** on unseen images.
 
 ## ⚙️ Workflow
-<a name="workflow">
 
 ### 1️⃣ Data Collection
 All observations across Europe of swallows (*Hirunda rustica*), swifts (*Apus apus*), and martins (*Delichon urbicum*) were retrieved from [iNaturalist](https://www.inaturalist.org). From the observations, we retrieved the species guess, image URL, number of observation agreements, and number of observation disagreements (made by iNaturalist users). The last two features were useful for the data cleaning process.
@@ -65,7 +63,6 @@ This was the most elaborate step:
   **Test Accuracy: 92%**
 
 ## 📁 Repository Structure
-<a name="repository-structure">
 
 ```bash
 BirdPics/
@@ -85,7 +82,6 @@ BirdPics/
 Please run `N1_download_dataset.ipynb` to download it (or download it manually) before running the other scripts. To download the dataset to Google Drive, run the `colab_notebooks/download_gdrive.ipynb` in Google Colab.
 
 ## 📊 Results
-<a name="results">
 
 | Model    | Validation Accuracy | Test Accuracy |
 | -------- | ------------------- | ------------- |
@@ -95,12 +91,10 @@ Please run `N1_download_dataset.ipynb` to download it (or download it manually) 
 
 
 ## 👷 Authors
-<a name="authors">
 
 - [@jgbeni](https://www.github.com/jgbeni)
 
 ## 📜 License & Credits
-<a name="license-credits">
 
 Code License
 
