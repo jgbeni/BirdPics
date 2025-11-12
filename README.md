@@ -24,7 +24,7 @@ Due to human activities and climate change, some migratory bird populations are 
 
 This project aims to classify three morphologically similar bird genera commonly found across Europe. In this first version, the considered species are:
 **Common Swallows** (*Hirunda rustica*), **Common Swifts** (*Apus apus*), and **Common House Martins** (*Delichon urbicum*).
-Accurately identifying these species in photographs is challenging due to their overlapping morphology and flight patterns.  
+Accurately identifying these species in real photographs is challenging due to their overlapping morphology and flight patterns.  
 This project explores how deep learning models, fine-tuned via transfer learning, can effectively distinguish between them using carefully cleaned and standardized image data.
 
 ### Key Features
@@ -55,7 +55,7 @@ This was the most elaborate step:
 - Cropped all images to **square format**.  
 - Resized to **224×224 pixels** using **bilinear interpolation**.  
 - Randomly split into **training**, **validation**, and **test** sets.  
-- Saved all processed data to **HDF5** for fast reading during training.
+- Saved all processed data as an **HDF5** file for efficient storage and fast reading during model training and evaluation.
 
 ### 4️⃣ Model Training
 - Applied **transfer learning** with **VGG16**, **VGG19** and **ResNet50** pre-trained on ImageNet.  
