@@ -85,12 +85,29 @@ Please run `N1_download_dataset.ipynb` to download it (or download it manually) 
 
 ## 📊 Results
 
+Summary of the accuracy results:
+
 | Model    | Validation Accuracy | Test Accuracy |
 | -------- | ------------------- | ------------- |
 | VGG16    | 88%                 | 88%           |
 | VGG19    | 90%                 | 89%           |
 | ResNet50 | **91%**             | **92%**       |
 
+**ResNet50** achieves a better performance overall.
+
+Analyzing in more detail, **ResNet50** is also the **most well-rounded model** (with no accuracy per class going below 90%)
+
+<img src="other_files/cm_vgg16.png" alt="Confusion matrix VGG16" width="325" height="325"> <img src="other_files/cm_vgg19.png" alt="Confusion matrix VGG19" width="325" height="325"> <img src="other_files/cm_resnet50.png" alt="Confusion matrix ResNet50" width="325" height="325">
+
+### 🔎 Insights
+- Swifts were the species with the highest accuracy among models.
+- Connected to the previous, all models confused swallows and martins between themselves the most, which led to worse results in their class accuracy. This is expected, as they are quite similar morphologically.
+- Some missclassifications were due to low-quality images due to imperfect cleaning. This could be corrected by refining the cleaning process, as CLIP did not yield perfect results.
+
+## 🚀 Future work
+- Refine the automated cleaning process. One option would be using an instructed **AI agent-based** pipeline as an image cleaner.
+- **Enhance the dataset** to include more migratory species and improve the taxonomic coverage
+- Explore more lightweight architectures similar to ResNet50 for **real-time inference**.
 
 ## 👷 Authors
 
