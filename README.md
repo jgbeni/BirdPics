@@ -32,7 +32,7 @@ This project explores how deep learning models, fine-tuned via transfer learning
 - 🧹 Automated data cleaning using **CLIP (OpenAI)**.  
 - ⚙️ Efficient data loading and storage with **HDF5** 
 - 🧠 Transfer learning using large image-recognition models: **VGG16**, **VGG19** and **ResNet50**.  
-- 📈 Achieved **92% accuracy** on unseen images.
+- 📈 Achieved **92% accuracy** on previously unseen images.
 
 ## ⚙️ Workflow
 
